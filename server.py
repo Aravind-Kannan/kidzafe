@@ -15,8 +15,8 @@ Persons_dict = {
 }
 
 parser = reqparse.RequestParser()
-parser.add_argument('name')
-parser.add_argument('domain')
+# parser.add_argument('name')
+# parser.add_argument('domain')
 
 # 404 -> Not found
 
