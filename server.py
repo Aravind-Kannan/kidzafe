@@ -55,5 +55,10 @@ api.add_resource(Persons, '/persons')
 api.add_resource(Person, '/person/<id>')
 
 
+@app.route('/')
+def index():
+    return 'OK!'
+
+
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run()
