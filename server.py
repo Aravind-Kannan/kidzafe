@@ -5,7 +5,7 @@ from flask import Flask
 from flask_restful import reqparse, abort, Api, Resource
 
 app = Flask(__name__)
-"""
+
 api = Api(app)
 
 Persons_dict = {
@@ -54,7 +54,6 @@ class Person(Resource):
 
 api.add_resource(Persons, '/persons')
 api.add_resource(Person, '/person/<id>')
-"""
 
 
 @app.route('/')
