@@ -37,6 +37,7 @@ class Persons(Resource):
 
     def post(self):
         args = parser.parse_args()
+        print(args)
         id = str(len(Persons_dict) + 1)
         abort_if_person_exists(id)
         Persons_dict[id] = args
