@@ -15,7 +15,8 @@ Persons_dict = {
 }
 
 parser = reqparse.RequestParser()
-parser.add_argument('name')
+parser.add_argument('name', required=True,
+                    help="Name cannot be blank!")
 parser.add_argument('domain')
 
 # 404 -> Not found
@@ -37,6 +38,7 @@ class Persons(Resource):
 
     def post(self):
         print(request.json)
+        print(request.get_json(force=True))
         args = parser.parse_args()
         print(args)
         id = str(len(Persons_dict) + 1)
