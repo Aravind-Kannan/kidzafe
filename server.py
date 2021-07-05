@@ -1,7 +1,7 @@
 import random
 import string
 
-from flask import Flask
+from flask import Flask, request
 from flask_restful import reqparse, abort, Api, Resource
 
 app = Flask(__name__)
@@ -15,8 +15,8 @@ Persons_dict = {
 }
 
 parser = reqparse.RequestParser()
-# parser.add_argument('name')
-# parser.add_argument('domain')
+parser.add_argument('name')
+parser.add_argument('domain')
 
 # 404 -> Not found
 
@@ -36,6 +36,7 @@ class Persons(Resource):
         return Persons_dict
 
     def post(self):
+        print(request.json)
         args = parser.parse_args()
         print(args)
         id = str(len(Persons_dict) + 1)
